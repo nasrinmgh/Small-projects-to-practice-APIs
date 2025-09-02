@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    align-self: center;
+    margin-top: 5rem;
+}
+
+#quoteSpan {
+    width: 18rem;
+    height: 8rem;
+    text-align:center;
+    border: 1px solid #000;
+    border-radius: 30px 2px 30px 2px;
+    margin: auto;
+}
+
+#quoteSpan::content {
+    padding-top: 5rem;
+}
