@@ -1,18 +1,20 @@
 body {
     margin: 0;
     padding: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(147, 196, 253, 0.594), rgba(0, 0, 0, 0));
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 5rem;
     min-width: 312px;
     min-height: 173px;
     max-width: fit-content;
-    border: 1.5px solid rgba(68, 56, 202, 0.256);
-    border-radius: 16px;
+   /* border: 1.5px solid rgba(68, 56, 202, 0.256);
+    border-radius: 16px; */
     margin: auto;
     margin-top: 6rem;
     align-content: center;
@@ -23,13 +25,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 138px;
-    min-height: 120px;
+    width: 380px;
+    height: 220px;
     max-width: 238;
     gap: 1rem;
-    border: inset;
-    border-radius: 10px rgb(67, 56, 202);
+    border-radius: 16px;
+    background: linear-gradient(to top, rgba(37, 100, 235, 0.176), rgba(0, 0, 0, 0), rgba(68, 56, 202, 0.162));
     margin: 1rem;
+    text-overflow: ellipsis;
 }
 
 .buttons {
@@ -51,12 +54,14 @@ body {
     padding: 1rem;
 }
 
-.card-gradient {
-    background: linear-gradient(to right, rgb(37, 99, 235), rgb(67, 56, 202));
+#authorSpan {
+    text-align: center;
+    color: rgb(67, 56, 202);
+    margin-bottom: 1rem;
 }
 
 .btn-gradient {
-    background: linear-gradient(to right, rgb(37, 99, 235), rgb(79, 70, 229));
+    background: linear-gradient(to right, rgba(37, 100, 235, 0.728), rgba(78, 70, 229, 0.724));
 }
 
 #getNewQuote {
@@ -78,4 +83,21 @@ body {
     border: 1.4px solid rgba(68, 56, 202, 0.256);
     background: transparent;
     text-align: center;
+}
+
+#copyIcon {
+    color: rgb(67, 56, 202);
+}
+
+.copy-alert {
+    width: 10rem;
+    height: 2rem;
+    border: 1.4px solid rgba(68, 56, 202, 0.089);
+    border-radius: 30px;
+    background: transparent;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: .7rem;
+    color: rgba(68, 56, 202, 0.55);
+    transition: ease-in 0.5s;
 }

@@ -32,10 +32,32 @@ newBtn.addEventListener("click", getNewQuote);
 
 // Load first quote on page load
 getNewQuote();
-
+ 
 // To copy the quote
+async function copyQuote() {
+  try{
+  const quoteText = document.querySelector('.card').textContent;
+  quoteText.trim();
+  await navigator.clipboard.writeText(quoteText);
+
+  } catch(error) {
+    console.log(error);
+  }
+}
+
 const copyBtn = document.getElementById('copy');
 copyBtn.addEventListener('click', () => {
-  quote = document.getElementById()
-})
+ copyQuote();
+ if (copyQuote) {
+  const copyAlert = document.createElement('span');
+  copyAlert.classList.add('copy-alert');
+  copyAlert.textContent = 'Copied successfully!';
+  const container = document.querySelector('.container');
+  container.appendChild(copyAlert);
 
+ setTimeout(() => {
+  container.removeChild(copyAlert);
+ }, 1000)
+  }
+
+})
