@@ -1,103 +1,172 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(147, 196, 253, 0.594), rgba(0, 0, 0, 0));
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(147, 196, 253, 0.594),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5rem;
-    min-width: 312px;
-    min-height: 173px;
-    max-width: fit-content;
-   /* border: 1.5px solid rgba(68, 56, 202, 0.256);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  min-width: 312px;
+  min-height: 173px;
+  max-width: fit-content;
+  /* border: 1.5px solid rgba(68, 56, 202, 0.256);
     border-radius: 16px; */
-    margin: auto;
-    margin-top: 6rem;
-    align-content: center;
+  margin: auto;
+  margin-top: 6rem;
+  align-content: center;
+}
+
+.toggle-container {
+  display: inline-block;
+  position: relative;
+}
+
+.toggle-label {
+  display: block;
+  width: 2rem;
+  height: 1rem;
+  background-color: #ccc;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  bottom: 0.9rem;
+  left: 10.4rem;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-label::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .toggle-label {
+  background-color: rgba(15, 15, 52, 0.534);
+}
+
+input[type="checkbox"]:checked + .toggle-label::after {
+  transform: translateX(15px);
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 380px;
-    height: 220px;
-    max-width: 238;
-    gap: 1rem;
-    border-radius: 16px;
-    background: linear-gradient(to top, rgba(37, 100, 235, 0.176), rgba(0, 0, 0, 0), rgba(68, 56, 202, 0.162));
-    margin: 1rem;
-    text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 380px;
+  height: 220px;
+  max-width: 238;
+  gap: 1rem;
+  border-radius: 16px;
+  background: linear-gradient(
+    to top,
+    rgba(37, 100, 235, 0.176),
+    rgba(0, 0, 0, 0),
+    rgba(68, 56, 202, 0.162)
+  );
+  margin: 1rem;
+  text-overflow: ellipsis;
 }
 
 .buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: .6rem;
-    margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1rem;
+}
+
+.card.dark-mode {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(147, 197, 253),
+    rgba(0, 0, 0, 0)
+  );
+  color: #f8fafc;
+}
+
+.buttons.dark-mode button {
+  background: linear-gradient(to right, rgb(71, 85, 105), rgb(51, 65, 85));
+  color: #f8fafc;
 }
 
 #quoteSpan {
-    text-align: center;
-    text-wrap: wrap;
-    color: rgb(67, 56, 202);
-    font-weight: 400;
-    margin: .5rem;
-    max-width: fit-content;
-    padding: 1rem;
+  text-align: center;
+  text-wrap: wrap;
+  color: rgb(67, 56, 202);
+  font-weight: 400;
+  margin: 0.5rem;
+  max-width: fit-content;
+  padding: 1rem;
 }
 
 #authorSpan {
-    text-align: center;
-    color: rgb(67, 56, 202);
-    margin-bottom: 1rem;
+  text-align: center;
+  color: rgb(67, 56, 202);
+  margin-bottom: 1rem;
 }
 
 .btn-gradient {
-    background: linear-gradient(to right, rgba(37, 100, 235, 0.728), rgba(78, 70, 229, 0.724));
+  background: linear-gradient(
+    to right,
+    rgba(37, 100, 235, 0.728),
+    rgba(78, 70, 229, 0.724)
+  );
 }
 
 #getNewQuote {
-    border: 0;
-    border-radius: 22px;
-    min-width: 7rem;
-    height: 2rem;
-    border-style: outset;
-    color: #ffff;
-    text-align: center;
-    font-size: smaller;
-    padding: .5rem 1rem;
+  border: 0;
+  border-radius: 22px;
+  min-width: 7rem;
+  height: 2rem;
+  border-style: outset;
+  color: #ffff;
+  text-align: center;
+  font-size: smaller;
+  padding: 0.5rem 1rem;
 }
 
 .icon {
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 16px;
-    border: 1.4px solid rgba(68, 56, 202, 0.256);
-    background: transparent;
-    text-align: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 16px;
+  border: 1.4px solid rgba(68, 56, 202, 0.256);
+  background: transparent;
+  text-align: center;
 }
 
 #copyIcon {
-    color: rgb(67, 56, 202);
+  color: rgb(67, 56, 202);
 }
 
 .copy-alert {
-    width: 10rem;
-    height: 2rem;
-    border: 1.4px solid rgba(68, 56, 202, 0.089);
-    border-radius: 30px;
-    background: transparent;
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: .7rem;
-    color: rgba(68, 56, 202, 0.55);
-    transition: ease-in 0.5s;
+  width: 10rem;
+  height: 2rem;
+  border: 1.4px solid rgba(68, 56, 202, 0.089);
+  border-radius: 30px;
+  background: transparent;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 0.7rem;
+  color: rgba(68, 56, 202, 0.55);
+  transition: ease-in 0.5s;
 }
